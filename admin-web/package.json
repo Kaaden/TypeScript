@@ -1,0 +1,20 @@
+{
+  "name": "typescript-react",
+  "version": "1.0.0",
+  "description": "admin typescript",
+  "main": "index.js",
+  "author": "kaaden",
+  "license": "MIT",
+  "dependencies": {
+    "@types/react": "^16.8.3",
+    "@types/react-dom": "^16.8.2",
+    "awesome-typescript-loader": "^5.2.1",
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2",
+    "source-map-loader": "^0.2.4",
+    "webpack": "^4.29.5"
+  },
+  "devDependencies": {
+    "webpack": "^4.29.5"
+  }
+}
