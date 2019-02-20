@@ -1,5 +1,6 @@
 import * as React from "react";
 import styles from './index.css';
+import Login from "../components/Login"
 export type BasicLayoutComponent<P> = React.SFC<P>;
 
 export interface BasicLayoutProps extends React.Props<any> {
@@ -10,8 +11,7 @@ export interface BasicLayoutProps extends React.Props<any> {
 const BasicLayout: BasicLayoutComponent<BasicLayoutProps> = props => {
   return (
     <div className={styles.normal}>
-      <h1 className={styles.title}>Yay! Welcome to umi!</h1>
-      {props.children}
+      <Login/>
     </div>
   );
 };
