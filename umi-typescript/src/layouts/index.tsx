@@ -1,19 +1,25 @@
 import * as React from "react";
+import withRouter from "umi/withRouter"
+import { connect } from "dva"
 import styles from './index.css';
 import Login from "../components/Login"
-export type BasicLayoutComponent<P> = React.SFC<P>;
 
-export interface BasicLayoutProps extends React.Props<any> {
-  history?: History;
-  location?: Location;
+interface IState {
+  loading: boolean,
 }
-
-const BasicLayout: BasicLayoutComponent<BasicLayoutProps> = props => {
-  return (
-    <div className={styles.normal}>
-      <Login/>
-    </div>
-  );
-};
-
-export default BasicLayout;
+class BasicLayout extends React.Component<IState>{
+  public render() {
+    return (
+      <div className="contain" >
+        <Login />
+      </div>
+    )
+  }
+}
+// export default BasicLayout;
+function mapStateToProps(state) {
+  const { auth, logoImg, navtive } = state.admin
+  return { auth, logoImg, navtive }
+}
+const mapState = connect(mapStateToProps)(BasicLayout)
+export default withRouter(mapState)
